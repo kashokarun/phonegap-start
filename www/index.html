@@ -18,45 +18,137 @@
     under the License.
 -->
 <html>
-    <head><script>
-var timer=null;
-
-function stop()
+    <head><script type="text/javascript">
+var n;
+function eval1(Calc)
 {
-clearTimeout(timer);
+    n=eval(Calc.Input.value);
+    Calc.Input.value=n;
 }
 
-function start()
+function f1(Calc)
 {
-var time=new Date();
-var hours=time.getHours();
-var minutes=time.getMinutes();
-minutes=((minutes < 10) ? "0" : "") + minutes;
-var seconds=time.getSeconds();
-seconds=((seconds < 10) ? "0" : "") + seconds;
-var clock=hours + ":" + minutes + ":" + seconds;
-document.forms[0].display.value=clock;
-timer=setTimeout("start()",1000);
+    Calc.Input.value=" ";
 }
 </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Real time clock</title>
+        <title>Calculator</title>
     </head>
-    <body onload="start()" onunload="stop()">
-<form>
-<input type="text" name="display" size="20">
-</form>
+   <BODY bgcolor=#364888 text=red>
+<center>
+<FORM NAME="Calc">
+<table border=4>
+<TR>
+<TH>
+<input type=text name=t1 style=text-align:center value=CASIO size=17 style=text-color:green>
+</TH>
+</TR>
+<TR>
+<TH>
+<INPUT TYPE="text"   NAME="Input" Size="17"> 
+</TH>
+</TR>
+<table border=4>
+                     
+<TR>
+<TD>
+<INPUT TYPE="button" NAME="seven" VALUE="  1  " 
+                OnClick="Calc.Input.value += '1'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="eight" VALUE="  2  " 
+                OnCLick="Calc.Input.value += '2'">
+</TD>
+<TD>
 
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready">
-                <p class="status pending blink">Connecting to Device</p>
-                <p class="status complete blink hide">Device is Ready</p>
-            </div>
-        </div>
+<INPUT TYPE="button" NAME="nine"  VALUE="  3  " 
+                OnClick="Calc.Input.value += '3'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="plus"  VALUE="  + " 
+                OnClick="Calc.Input.value += ' + '">
+</TD>
+</TR>
+<TD>
+<INPUT TYPE="button" NAME="4"
+  VALUE="  4  " OnClick="Calc.Input.value += ' 4 '">
+</TD>
+<TD>
+
+<INPUT TYPE="button" NAME="four"  VALUE="  5  " 
+                OnClick="Calc.Input.value += '5'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="five"  VALUE="  6  " 
+                OnCLick="Calc.Input.value += '6'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="times" VALUE="  -  " 
+                OnClick="Calc.Input.value += ' - '">
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT TYPE="button" NAME="nine"  VALUE="  7  " 
+                OnClick="Calc.Input.value += '7'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="nine"  VALUE="  8  " 
+                OnClick="Calc.Input.value += '8'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="nine"  VALUE="  9  " 
+                OnClick="Calc.Input.value += '9'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="minus" VALUE=" X " 
+                OnClick="Calc.Input.value += ' * '">
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT TYPE="button" NAME="point" 
+    VALUE="   .  " OnClick="Calc.Input.value += '.'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="zero"  VALUE="  0  " 
+                OnClick="Calc.Input.value += '0'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="point"
+    VALUE="  c  " OnClick="f1(this.form)">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="DIV"  value="  /  "
+     OnClick="Calc.Input.value += '/'">
+
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT TYPE="button" NAME="bracket" 
+    VALUE="   (  " OnClick="Calc.Input.value += '('">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="zero"  VALUE="   )  " 
+                OnClick="Calc.Input.value += ')'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="point"
+    VALUE="  %" OnClick="Calc.Input.value += '%'">
+</TD>
+<TD>
+<INPUT TYPE="button" NAME="DIV"  value="  = "
+     OnClick="eval1(this.form)">
+
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</center>
         <script type="text/javascript" src="cordova-2.0.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
